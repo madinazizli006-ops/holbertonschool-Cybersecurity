@@ -1,7 +1,2 @@
 #!/bin/bash
-IFS='.' read -r o1 o2 o3 o4 <<< "$1"
-printf "%08d.%08d.%08d.%08d\n" \
-    "$(echo "obase=2; $o1" | bc)" \
-    "$(echo "obase=2; $o2" | bc)" \
-    "$(echo "obase=2; $o3" | bc)" \
-    "$(echo "obase=2; $o4" | bc)"
+IFS=. read a b c d <<< "$1"; printf "%08d.%08d.%08d.%08d\n" "$(echo "obase=2;$a"|bc)" "$(echo "obase=2;$b"|bc)" "$(echo "obase=2;$c"|bc)" "$(echo "obase=2;$d"|bc)"
