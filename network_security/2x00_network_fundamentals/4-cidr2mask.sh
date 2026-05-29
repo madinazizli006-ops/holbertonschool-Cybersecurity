@@ -1,4 +1,2 @@
 #!/bin/bash
-n=$1
-mask=$((0xFFFFFFFF << (32-n)))
-printf "%d.%d.%d.%d\n" $(( (mask>>24) & 255 )) $(( (mask>>16) & 255 )) $(( (mask>>8) & 255 )) $(( mask & 255 ))
+printf "%d.%d.%d.%d\n" $(( (0xffffffff << (32-$1) >> 24) & 255 )) $(( (0xffffffff << (32-$1) >> 16) & 255 )) $(( (0xffffffff << (32-$1) >> 8) & 255 )) $(( (0xffffffff << (32-$1)) & 255 ))
